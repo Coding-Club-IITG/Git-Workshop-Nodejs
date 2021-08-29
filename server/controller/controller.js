@@ -85,3 +85,11 @@ exports.update = (req, res)=>{
         })
 }
 
+//delete user
+exports.delete=(req,res)=>{
+    const id=req.params.id;
+    Userdb.findByIdAndDelete(id).then(data=>{
+        console.log(data+"deleted");
+        res.status(200).send({ message : "Deleted successfully"})
+    }).catch(err=>{res.status(500).send({ message : "Error while deletion"})})
+}
