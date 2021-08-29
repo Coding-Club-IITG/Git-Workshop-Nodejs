@@ -36,13 +36,13 @@ exports.find = (req, res)=>{
 
     if(req.query.id){
         const id = req.query.id;
-
+      
         Userdb.findById(id)
             .then(data =>{
                 if(!data){
-                    res.status(404).send({ message : "Not found user with id "+ id})
+                    res.status(404).send({ message : "Not found user with id "+ id});
                 }else{
-                    res.send(data)
+                    res.send(data);
                 }
             })
             .catch(err =>{
@@ -76,7 +76,7 @@ exports.update = (req, res)=>{
             if(!data){
                 res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
             }else{
-                res.send(data)
+                res.send(data);
             }
         })
         .catch(err =>{
