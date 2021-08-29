@@ -8,6 +8,8 @@ const controller = require('../controller/controller');
 route.get('/', services.homeRoutes);
 
 route.get('/add-user', services.add_user) 
+route.get('/update-user', services.update_user) 
+
 
 
 route.post('/api/users', controller.create);
