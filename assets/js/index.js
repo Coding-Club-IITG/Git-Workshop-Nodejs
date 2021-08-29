@@ -24,6 +24,7 @@ $("#update_user").submit(function(event){
 
     $.ajax(request).done(function(response){
         alert("Data Updated Successfully!");
+        location.href="/";
     })
 
 })
@@ -46,4 +47,6 @@ if(window.location.pathname == "/"){
         }
 
     })
+
+    
 }
