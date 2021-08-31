@@ -13,7 +13,8 @@ exports.create = (req,res)=>{
         name : req.body.name,
         email : req.body.email,
         gender: req.body.gender,
-        status : req.body.status
+        status : req.body.status,
+        contactinfo:req.body.contactinfo
     })
 
     // save user in the database
@@ -84,3 +85,15 @@ exports.update = (req, res)=>{
         })
 }
 
+// delete
+
+exports.delete=(req,res) => {
+    const id = req.params.id;
+    Userdb.findByIdAndDelete(id)
+    .then(data => {
+        res.status(200).send({message: "Deleted User Sucessfully"})
+    })
+    .catch(err => {
+        res.status(500).send({message: "Error while deletion"})
+    })
+}
